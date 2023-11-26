@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}EditCar{% endblock %}
+
+{% block autocontent %}
+<main class="main-add-car">
+<form method="post" class="add-car" enctype="multipart/form-data">
+{% csrf_token %}
+    <h4>Редактировать автомобиль</h4>
+    {% for f in form %}
+    <div class="form-field">
+        <label class="form-label">{{ f.label }}:</label>
+        <div class="form-input">{{ f }}</div>
+    </div>
+    {% endfor %}
+    {% if errors %}
+<div class="form-error">
+    <ul>
+        {% for error_list in errors %}
+            {% for error in error_list %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+    <button id="edit-button" class="btn btn-success">Редактировать</button>
+</form>
+</main>
+{% endblock %}

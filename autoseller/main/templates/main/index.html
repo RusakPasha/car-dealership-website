@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}CarsForSelling{% endblock %}
+
+{% block autocontent %}
+    <div class="page">
+        <h1>CarsF<i class="fas fa-cog"></i>rSelling</h1>
+        <h6>В нашем автосалоне доступны автомобили различных марок по выгодной цене</h6>
+        <main class="mainpage">
+        <div class="page_block1">
+            <img src="{% static 'main/img/audi.png'%}" height="120" width="160">
+            <img src="{% static 'main/img/ferrari.png'%}" height="100" width="110">
+            <img src="{% static 'main/img/lambo.png'%}" height="100" width="190">
+            <img src="{% static 'main/img/volkswagen.png'%}" height="100" width="100">
+            <img src="{% static 'main/img/porsche.png'%}" height="100" width="160">
+            <img src="{% static 'main/img/bmw.png'%}" height="120" width="120">
+        </div>
+        <div class="page_block2">
+            <img src="{% static 'main/img/bugatti.png'%}" height="130" width="180">
+            <img src="{% static 'main/img/ford.png'%}" height="90" width="160">
+            <img src="{% static 'main/img/mercedes.png'%}" height="130" width="160">
+            <img src="{% static 'main/img/chevrolet.png'%}" height="100" width="160">
+            <img src="{% static 'main/img/toyota.png'%}" height="110" width="170">
+        </div>
+        </main>
+        <footer>
+        <h3>Выбирайте лучшие автомобили со всего мира именно у нас</h3>
+        </footer>
+    </div>
+{% endblock %}

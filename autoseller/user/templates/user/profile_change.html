@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}ProfileChange{% endblock %}
+
+{% block autocontent %}
+<main class="main-change">
+<form method="post" class="change" enctype="multipart/form-data">
+{% csrf_token %}
+    <h4>Изменить профиль</h4>
+    {% for uf in user_form %}
+    <div class="form-field">
+        <label class="form-label">{{ uf.label }}:</label>
+        <div class="form-input">{{ uf }}</div>
+    </div>
+    <style>
+    .form-error {
+        list-style-type: none;
+        padding: 0;
+    }
+    </style>
+    <ul class="form-error">
+        {% for error in uf.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    {% for pf in profile_form %}
+    <div class="form-field">
+        <label class="form-label">{{ pf.label }}:</label>
+        <div class="form-input">{{ pf }}</div>
+    </div>
+    <style>
+    .form-error {
+        list-style-type: none;
+        padding: 0;
+    }
+    </style>
+    <ul class="form-error">
+        {% for error in pf.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <button class="btn btn-success">Применить изменения</button>
+</form>
+</main>
+{% endblock %}

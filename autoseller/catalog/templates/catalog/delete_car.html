@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}AddCar{% endblock %}
+
+{% block autocontent %}
+<main class="main-delete-car">
+<form method="post" class="delete-car">
+{% csrf_token %}
+    <h4>Удалить автомобиль</h4>
+    <button class="btn btn-danger">Удалить</button>
+</form>
+</main>
+{% endblock %}

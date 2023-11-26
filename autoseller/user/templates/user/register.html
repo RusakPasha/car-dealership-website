@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock %}
+
+{% block autocontent %}
+<main class="main-sign">
+<form method="post" class="sign">
+{% csrf_token %}
+    <h4>Регистрация</h4>
+    {% for f in form %}
+    <div class="form-field">
+        <label class="form-label">{{ f.label }}:</label>
+        <div class="form-input">{{ f }}</div>
+    <style>
+    .form-error {
+        list-style-type: none;
+        padding: 0;
+    }
+    </style>
+    <ul class="form-error">
+        {% for error in f.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endfor %}
+    <button class="btn btn-warning">Зарегистрироваться</button>
+</form>
+</main>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Test-Drive{% endblock %}
+
+{% block autocontent %}
+<main class="main-testdrive">
+<form method="post" class="testdrive">
+{% csrf_token %}
+    <h4>Записаться на Тест-драйв</h4>
+    {% for f in testdrive_form %}
+    <div class="form-field">
+        <label class="form-label">{{ f.label }}</label>
+        <div class="form-input">{{ f }}</div>
+    </div>
+    {% endfor %}
+    <input type="hidden" name="car_id" value="{{ car.id }}">
+    <h6>Продолжительность тест-драйва от 1 до 12 часов</h6>
+    {% if errors %}
+<div class="form-error">
+    <ul>
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+    </ul>
+</div>
+{% endif %}
+    <button class="btn btn-success">Записаться</button>
+</form>
+</main>
+{% endblock %}

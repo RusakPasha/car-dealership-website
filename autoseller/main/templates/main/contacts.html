@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}CarsForSellingContacts{% endblock %}
+
+{% block autocontent %}
+    <div class="contacts">
+        <h1>Контактные данные</h1>
+        <main class="main">
+        <div class="adressinfo">
+            <h4 id="adress">Адрес</h4>
+            <p>г. Минск, ул. Л.Беды, 2</p>
+            <img src="{% static 'main/img/map.png'%}" height="210" width="240">
+        </div>
+
+        <div class="mailinfo">
+            <h4 id="mail">Электронная почта</h4>
+            <p><i class="far fa-envelope"></i> carsforselling@gmail.com</p>
+            <img src="{% static 'main/img/mail.png'%}" height="120" width="180">
+        </div>
+
+        <div class="phoneinfo">
+            <h4>Телефон</h4>
+            <h6 id="call">Колл-центр</h6>
+            <p>+375291234567</p>
+            <hr width="200">
+            <h6>Главный менеджер</h6>
+            <p>+375298508152</p>
+        </div>
+        </main>
+        <footer class="footer">
+            <h3>Социальные сети</h3>
+            <hr width="100%">
+            <div class="icon-container">
+                <a href="https://instagram.com/pash.rusak?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram fa-4x"></i></a>
+                <a href="https://t.me/TelegramTips" target="_blank"><i class="fab fa-telegram fa-4x"></i></a>
+                <a href="https://vk.com/p.rusak" target="_blank"><i class="fab fa-vk fa-4x"></i></a>
+                <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp fa-4x"></i></a>
+            </div>
+        </footer>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Log in{% endblock %}
+
+{% block autocontent %}
+<main class="main-login">
+    <form method="post" class="log">
+        {% csrf_token %}
+        <h4>Авторизация</h4>
+        {% for f in form %}
+    <div class="form-field">
+        <label class="form-label">{{ f.label }}:</label>
+        <div class="form-input">{{ f }}</div>
+    </div>
+{% endfor %}
+        <ul class="form-error-login">
+        {% if form.errors %}
+            <li> {{form.non_field_errors}}</li>
+        {% endif %}
+        </ul>
+        <button class="btn btn-success">Войти</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,407 @@
+@keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+body {
+    height: 100%;
+    background: linear-gradient(to right, #2c2c2c 20%, #3f3f3f 66%, #545454 100%);
+    background-size: 400% 400%;
+    animation: animatedgradient 10s ease infinite;
+}
+
+aside {
+float: left;
+background: #191919;
+width: 16%;
+height: 100vh;
+padding: 1%;
+color: white;
+border-right: 4px solid #6a6a6a;
+position: fixed;
+z-index:100;
+}
+
+aside .logo {
+margin-left: 6px;
+font-size: 23px;
+font-weight: bold;
+}
+
+aside h3 {
+margin-top: 40px;
+font-size: 25px;
+margin-left: 32px;
+}
+
+aside ul {list-style:none}
+
+aside ul li {
+display:block;
+color: white;
+font-size: 16px;
+margin-top: 8px;
+text-decoration: none;
+transition: transform 0.45s ease;
+}
+
+aside ul li:hover, aside ul a:hover, aside h6:hover {
+color: orange;
+text-decoration: none;
+transform: scale(1.05);
+}
+
+aside a {text-decoration: none}
+
+#nav-user {
+position: relative;
+top: 6px;
+}
+
+aside .profile-nav {
+margin-top: 40px;
+line-height: 16px;
+}
+
+aside h6 {
+color: white;
+transition: transform 0.45s ease;
+position: relative;
+bottom: -45%;
+}
+
+main .page, .car_page, .contacts {
+float: right;
+color: white;
+text-align: center;
+margin-top: 26px;
+width: 84%;
+}
+
+main .page h1, .car_page h1 {
+font-family: Helvetica, sans-serif;
+font-weight: bold;
+}
+
+.mainpage {
+min-height: 100%;
+display: flex;
+flex-direction: column;
+padding: 30px;
+}
+
+main .page h3 {
+font-size: 24px;
+margin-top: 10%;
+font-weight: 500;
+}
+
+.page_block1, .page_block2 {
+margin-top: 50px;
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+
+.car_block  {
+line-height: 10px;
+margin-left: 110px;
+margin-top: 20px;
+margin-bottom: 20px;
+float: left;
+width: 280px;
+height: 300px;
+background: white;
+color: #191919;
+border-radius: 5px;
+transition: transform 0.45s ease;
+}
+
+.car_block img {
+margin-top: 10px;
+border-radius: 4px;
+}
+
+.car_block h4 {margin-top: 3px;}
+
+.car_block h5 {margin-top: -10px}
+
+.car_block:hover {
+transform: scale(1.05);
+}
+
+main .about_auto {
+float: right;
+text-align: center;
+color: white;
+margin-top: 26px;
+width: 84%;
+}
+
+main .about_auto h1 {
+text-shadow: 1px 2px black;
+color: orange;
+font-family: Helvetica, sans-serif;
+font-weight: bold;
+}
+
+.car_page img {border-radius: 4px 4px 0px 0px}
+
+.car_page p {
+font-size: 16px;
+text-align: left;
+line-height: 24px;
+margin-top: 0px;
+margin-left: 2px;
+font-weight: 400;
+color: black;
+}
+
+.car_page_text {
+margin-left: 238px;
+background: white;
+width: 800px;
+height: 196px;
+border-radius: 0px 0px 4px 4px;
+}
+
+.car_page a {
+float: left;
+margin-left: 250px;
+margin-top: 8px;
+margin-bottom: 15px;
+font-weight: 500;
+transition: transform 0.45s ease;
+}
+
+
+.car_page a.btn-outline-info {
+
+float:right;
+margin-right: 250px;
+width: 100px;
+}
+
+.car_page .btn-group-toggle {
+position: absolute;;
+display: flex;
+width: 200px;
+left: 675px;
+}
+
+.btn-group-toggle .btn-warning {color: white;}
+
+.car_page a:hover {
+color: white;
+transform: scale(1.05);
+}
+
+.dropdown {
+float: right;
+margin-top: -30px;
+margin-bottom: -7px;
+margin-right: 140px;
+}
+
+.contacts h1 {margin-bottom: 60px;}
+
+.contacts {
+min-height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.adressinfo, .mailinfo, .phoneinfo {
+float: left;
+width: 300px;
+height: 320px;
+border-radius: 8px;
+border-left: 1px solid white;
+border-right: 1px solid white;
+}
+
+.adressinfo {
+position: relative;
+left: 3%;
+}
+
+.adressinfo img{border-radius: 4px;}
+
+.mailinfo {
+position: relative;
+left: 15.5%;
+font-weight: 300;
+}
+
+.mailinfo img{margin-top: 30px}
+
+.phoneinfo {
+position: relative;
+right: -27%;
+}
+
+.phoneinfo hr {margin-left: 50px;}
+#call {margin-top: 60px;}
+
+.footer {
+margin-top: 6%;
+}
+
+.icon-container {
+margin-left: 35%;
+display: flex;
+justify-content: space-between;
+width:30%;
+transition: transform 1s ease;
+}
+
+.icon-container a {color: white;}
+
+.icon-container a:hover {
+text-decoration: none;
+transform: scale(1.1);
+}
+
+.icon-container a:nth-child(1):hover {color: #C13584}
+.icon-container a:nth-child(2):hover {color: #229ED9}
+.icon-container a:nth-child(3):hover {color: #4C75A3}
+.icon-container a:nth-child(4):hover {color: #43d854}
+
+.sign, .log, .change, .main-add-car, .main-delete-car, .testdrive {
+position: relative;
+background: white;
+color: #3f3f3f;
+width: 420px;
+margin-left: 46%;
+padding: 20px;
+border-radius: 6px;
+overflow: auto;
+top: 100px;
+}
+
+.main-add-car {top: 20px;}
+.main-delete-car {top: 200px;}
+.main-testdrive {top: 160px;}
+
+.sign h4, .log h4, .change h4, .main-add-car h4, .main-delete-car h4, .testdrive h4 {
+text-align: center;
+color: black;
+font-weight: bold;
+margin-bottom: 20px;
+}
+.main-testdrive .btn-success {margin-left: 137px;}
+.testdrive h6 {
+color: gray;
+font-size:12px;
+text-align: center;
+font-weight: 400;
+}
+.sign .btn-warning{
+margin-left: 103.65px;
+color: white;
+margin-top: 10px;
+}
+
+.log .btn-success, .main-delete-car .btn-danger{
+margin-left: 140px;
+color: white;
+width: 100px;
+margin-top: 10px;
+}
+
+.change .btn-success {
+margin-left: 93.5px;
+color: white;
+margin-top: 10px;
+}
+
+.main-add-car .btn-success {margin-left: 142px;}
+
+#edit-button {
+margin-left: 123px;
+margin-top: 10px;
+}
+
+.main-add-car p {
+text-align: center;
+color: red;
+}
+
+.form-field{
+display: flex;
+justify-content: space-between;
+margin-top: 7px;
+}
+
+.form-input {
+flex: 2.6;
+}
+
+.form-label {
+flex: 2;
+text-align: right;
+padding-right: 10px;
+}
+
+.form-error {
+text-align: left;
+font-size: 15px;
+color: red;
+margin-top: 0px;
+}
+
+.profile-head {
+float: left;
+font-weight: bold;
+color: white;
+margin-left: 46%;
+margin-top: 2%;
+}
+
+.profile-main {
+color: white;
+}
+
+.profile-block {
+float: left;
+margin-left: 20%;
+border: 1px solid white;
+border-radius: 5px;
+min-width: 550px;
+padding: 20px;
+overflow: auto;
+}
+
+.profile-block img{
+border-radius: 50%;
+}
+.profile-gen {
+display: flex;
+justify-content: flex-start;
+
+}
+.profile-gen p {
+font-size: 26px;
+font-weight: 400;
+margin: 45px 20px;
+}
+
+.profile-info p {
+font-weight: 300;
+font-size: 18px;
+margin-top: 20px;
+line-height: 10px;
+}
+
+.profile-block button {
+margin-top: 5px;
+margin-left: 10px;
+}
+

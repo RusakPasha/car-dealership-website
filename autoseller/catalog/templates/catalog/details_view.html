@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}CarsForSelling-{{car.model}}{% endblock %}
+
+{% block autocontent %}
+    <div class="car_page">
+        <h1>{{ car.brand}} {{car.model}}</h1>
+         <img src="{{ car.img.url }}" height="480" width="800">
+        <div class="car_page_text">
+
+        <p> Цена автомобиля: {{car.price}}$<br>
+            Дата выпуска: {{car.date}}<br>
+            Пробег: {{car.mileage}}км<br>
+            Двигатель: {{car.fuel}} {{car.engine}}л<br>
+            Кузов: {{car.body_type}}<br>
+            Коробка передач: {{car.gear}}<br>
+            Привод: {{car.drive_type}}<br>
+            Цвет: {{car.color}}
+        </p>
+
+        </div>
+            <a class="btn btn-outline-success" href="/catalog">Назад</a>
+            {% if user.is_superuser %}
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <a class="btn btn-warning" href="{% url 'edit_car' car.id %}">Редактировать</a>
+                    <a class="btn btn-danger" href="{% url 'delete_car' car.id %}">Удалить</a>
+                </div>
+            {% endif %}
+            <a class="btn btn-outline-info" href="{% url 'testdrive' car.id%}">Тест-драйв</a>
+    </div>
+{% endblock %}

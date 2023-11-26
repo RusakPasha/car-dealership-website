@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block autocontent %}
+<header class="profile-head">
+    <h1>Личный кабинет</h1>
+</header>
+<main class="profile-main">
+<hr width="100%">
+    <div class="profile-block">
+        <div class="profile-gen">
+        <img src="{{customuser.image.url}}" alt="avatar" height="130" width="130">
+        <p>{{customuser.second_name}} {{customuser.name}}</p>
+        </div>
+        <hr width="100%">
+        <div class="profile-info">
+        <p>Имя пользователя: {{user.username}}</p>
+        <p>Электронная почта: {{user.email}}</p>
+        {% if user.is_superuser %}
+        <p>Статус: Администратор</p>
+        {% else %}
+        <p>Статус: Обычный пользователь</p>
+        {% endif %}
+        </div>
+        <a href="{% url 'profile_change' %}"><button class="btn btn-success">Изменить</button></a>
+    </div>
+</main>
+<h2 id="testdrive-title">Ваши Тест-Драйвы</h2>
+<div class="testdrive-block">
+    {% if testdrive %}
+     {% for td in testdrive %}
+        <h5>{{ td.car.brand }} {{ td.car.model }} {{td.car.date|date:"Y"}}</h5>
+        <img src="{{ td.car.img.url }}" height="160" width="250">
+        <p>Дата тест-драйва: {{ td.test_date|date:"Y-m-d" }}</p>
+        <p>Продолжительность: {{ td.duration}}ч</p>
+        <hr>
+        {% endfor %}
+    {% else %}
+    <h1>ЗДЕСЬ ПОКА НИЧЕГО НЕТ</h1>
+    {% endif %}
+</div>
+<a id="testdrive-button" class="btn btn-light" href="{% url 'catalog' %}">Записаться на тест-драйв</a>
+{% endblock %}
